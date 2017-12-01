@@ -10,12 +10,21 @@ GNSS ofwel Global Navigation Satellite System, is een sateliet systeem met een w
 \label{LGPS} 
 GPS staat voor Global Positioning System. Dit is het satelieten gebaseerde positie systeem dat bij ons het bekendste is. Het is ontwikkeld in Amerika \cite{LBibGNSS}\cite{LBibGNSS3}. het is \'e\'en van de langst gebruikte systemen binnen GNSS en draait momenteel op volledige capaciteit \cite{LBibGNSS4}. Voor de gebruikers is kost van de data een hoge bezorgdheid. Daarom is het belangrijk om de kosten van de operaties te verkleinen. GPS moet toegankelijk zijn voor meerdere clients. De gebruikerstoegang gebeurt voornamelijk door mobiele toestellen die verbindig maken via het internet \cite{LBibGPS}. De constellatie van GPS bestaat uit 32 satellieten en heeft zijn volledgie functionele capaciteit bereikt (FOC), het systeem wordt geleidelijk aan gemoderniseerd \cite{LBibGNSS4}.
 
+\subsubsection{Signalen}
+Het GPS signaal bestaat uit twee zeer stabiele, bijna monochromatische draaggolven L1 en L2, waarop drie modulaties op aanwezig zijn:
+\begin{itemize}
+	\item C/A code
+	\item P code
+	\item broadcast bericht
+\end{itemize}. 
+Alle componenten van een GPS signaal zijn gebaseers op een fundamentele kloksnelheid f\textsubscript{0} van 10,23 MHz. De GPS draaggolven hebben een frequentie van 154 f\textsubscript{0} voor L1 en een frequentie van 120 f\textsubscript{0} voor L2\cite{LBibGPS2}.
+
 \subsubsection{Manieren om posities te bepalen}
 \paragraph{Differential GPS Corrections}
 Differential GPS Corrections ook weel DGPS genoemd, worden gebruikt om nauwkeurig posities  te bepalen. Er worden minimaal twee GPS ontvangers gebruikt. Van \'e\'en van deze ontvangers moet de preciese postie gekend zijn. De positie van het andere station kan dan geschat worden door een vergelijking van de co\"ordinaten van de twee stations. Dit is een populaire manier om sateliet en klok fouten te elimineren. Een nadeel van deze techniek is dat de observaties van beide stations simultaan moeten gebeuren \cite{LBibGNSS2}. 
 
 \paragraph{Precise Point Positioning}
-of PPP is een techniek die werkt met \'e\'en ontvanger en is zeer effeci\"ent. \cite{LBibGNSS4}
+of PPP is een techniek die werkt met \'e\'en ontvanger en is zeer effici\"ent. \cite{LBibGNSS4}
 
 \subsection{GLONASS}
 \label{LGLO}
@@ -56,7 +65,9 @@ Eens de vier systemen volledig ingezet zijn, zijn er meer dan 100 satelieten bes
 \section{Communicatie}
 \label{LCom}
 \subsection{EUREF Permanent Netwerk}
-Het EUREF Permanent Network wordt ook wel EPN genoemd. Het netwerk is opgebouwd uit 190 permanenten GPS stations waarvan er 29 ook GLONASS satellieten volgend. Het primaire doel van EPN is het Euroean Terrestrial Reference Systems (ETRS) onderhouden. \cite{LBibEPN}.
+Het EUREF Permanent GNSS Network wordt ook wel EPN genoemd \cite{LBibEPN3,LBibEPN2,LBibEPN}. Het netwerk is gebaseerd op een relatie tussen site opperatoren van permanenten GNSS sites, die bereid zijn om hun data met het publiek te delen. Het EPN werkt nauw samen met het IGS \cite{LBibEPN3}. Het netwerk is opgebouwd uit 220 permanenten GPS stations waarvan er 29 ook GLONASS satellieten volgend. Het primaire doel van EPN is het European Terrestrial Reference Systems (ETRS89) onderhouden, dit gebeurt door de leden op vrijwillige basis. \cite{LBibEPN}  \cite{LBibEPN2}. Een ander doel is het beschikbaar stellen van GNSS data en preciese co\"ordinaten van GNSS stations beschikbaar stellen aan het publiek. Nieuwe stations worden aan het netwerk toegevoegd zodra ze voldoen aan alle vereisten. HEt EPN werkt met drie datacenters die gedefinieerd worden als regionale datacenters (RDC). Het Federal Agency for Cartography and Geodesy van Duitsland (BKG) en het Austrian Academy of Sciences (OLG)  datacenters, zijn verantwoordelijk voor de dagelijkse zaken. Alle EPN stations gaaan op vooraf gedefinieerde wegen hun data op regelamtige basis doorsturen naar het BKG en OLG \cite{LBibEPN2}. Het datacenter van Royal Observatory of Belgium (ROB) doet dienst als datacenter van het centrale bureau van het EPN. Dit datacenter is verantwoordelijk voor het hosten van alle historische EPN RINEX data met gecorrigeerde meta-data en 1 regionale broadcaster. \cite{LBibEPN2,LBibEPN3}. Het co\"ordineren van tijd analyse is eveneens een doel van het EPN. Dit om het EPN te versterken als geodetisch referentie netwerk. Van de nieuw ge\"installeerde antennes is 90 procent een multi-GNSS antenne. Hiervan is 75 procent ontworpen om GNSS en GLONASS te obeserveren, 25 procent is bovendien ook klaar om Galileo te ontvangen. Het netwerk is dus continu onder constructie. \cite{LBibEPN3}.
+
+\subsection{RINEX data formaat}
 
 \subsection{RTCM}
 RTCM staat voor Radio Technical Commission for Maritime Services \cite{LBibGLONASS}.
