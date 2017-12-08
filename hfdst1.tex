@@ -40,7 +40,13 @@ GNSS ofwel Global Navigation Satellite System, is een sateliet systeem met een w
 GPS staat voor Global Positioning System. Dit is het satelieten gebaseerde positie systeem dat bij ons het bekendste is. Het is ontwikkeld in Amerika \cite{LBibGNSS}\cite{LBibGNSS3}. het is \'e\'en van de langst en meest gebruikte systemen binnen GNSS en draait momenteel op volledige capaciteit \cite{LBibGNSS4,LBibGNSS8}. GPS wordt vaak gebruikt als algemene term voor satelliet navigatie. Het primair doel van GPS is drie dimensionale navigatie \cite{LBibGNSS8}. Voor de gebruikers is kost van de data een hoge bezorgdheid. Daarom is het belangrijk om de kosten van de operaties te verkleinen. GPS moet toegankelijk zijn voor meerdere clients. De gebruikerstoegang gebeurt voornamelijk door mobiele toestellen die verbindig maken via het internet \cite{LBibGPS}. Voor sommige toepassingen voldoen de nauwkeurigheid en de betrouwbaarheid van de GPS constellatie niet \cite{LBibGNSS6}.
 
 \subsubsection{Opbouw constellatie}
- De constellatie van GPS bestaat uit 32 satellieten en heeft zijn volledgie functionele capaciteit bereikt (FOC), het systeem wordt geleidelijk aan gemoderniseerd \cite{LBibGNSS4}. De satellieten zijn geplaatst in een bijna circulaire baan met een straal van 2562.75km. De periode bedraagt 11 uur en 58 minuten \cite{LBibGNSS6,LBibGNSS8}. Dit is de tijd die verstrijkt tussen dat een satelliet terug op dezelfde plaats wordt waargenomen. De satellieten worden geplaatst in 6 orbitale vlakken. De vlakken zijn gelijk geplaatste in de lengte richting. Maar de satellieten in elk vlak zijn niet op gelijke afstand geplaatst \cite{LBibGNSS6}. Deze constellatie voor ziet de gebruiker met vijf tot acht zcihtbare satellieten vanop elk punt op het aardoppervlak \cite{LBibGNSS8}.
+ De constellatie van GPS bestaat uit 32 satellieten en heeft zijn volledgie functionele capaciteit bereikt (FOC), het systeem wordt geleidelijk aan gemoderniseerd \cite{LBibGNSS4}. De satellieten zijn geplaatst in een bijna circulaire baan met een straal van 2562.75km. De periode bedraagt 11 uur en 58 minuten \cite{LBibGNSS6,LBibGNSS8}. Dit is de tijd die verstrijkt tussen dat een satelliet terug op dezelfde plaats wordt waargenomen. De satellieten worden geplaatst in 6 orbitale vlakken. De vlakken zijn gelijk geplaatste in de lengte richting. Maar de satellieten in elk vlak zijn niet op gelijke afstand geplaatst \cite{LBibGNSS6}. Deze constellatie voor ziet de gebruiker met vijf tot acht zichtbare satellieten vanop elk punt op het aardoppervlak \cite{LBibGNSS8}. De opbouw van de constellatie wordt grafisch weergegeven in figuur \ref{imgGPS}.
+ 
+ \begin{figure}[hpb]
+ 	\includegraphics[scale=1]{GPS.png}
+ 	\caption{GPS constellatie \cite{LImgGPS}}
+ 	\label{imgGPS}
+ \end{figure}
 
 \subsubsection{Signalen}
 Het GPS signaal bestaat uit twee zeer stabiele, bijna monochromatische draaggolven L1 en L2, waarop drie modulaties op aanwezig zijn:
@@ -91,7 +97,7 @@ Deze satellieten zijn vanaf 2008 in gebruik genomen \cite{LBibPPP}.
 De constellatie is opgebouwd uit 24 satelieten \cite{LBibGNSS4}. Deze satelliten zijn geplaatst in drie orbitale vlakken met een onderlinge afstand van 120 graden \cite{LBibGLONASS2,LBibGNSS6, LBibGNSS8}. Per vlak zijn er acht saellieten geplaatst. De periode per satelliet voor \'e\'en omwentelling rond de aarde is 11 uur en 15 minuten \cite{LBibGNSS6}.  Het systeem heeft zijn FOC bereikt in januari 1996 \cite{LBibGLONASS}. Het systeem is volledig gerevialiseerd en is volledig operationeel \cite{LBibGNSS4}. Een grafische weergave van de GLONASS constellatie is te zien in figuur \ref{imgGLONASS}.
 
 \begin{figure}[hpb]
-	\includegraphics[scale=0.65]{GLONASS.jpg}
+	\includegraphics[scale=0.5]{GLONASS.jpg}
 	\caption{GLONASS constellatie \cite{LImgGLONASS}}
 	\label{imgGLONASS}
 \end{figure}
@@ -138,7 +144,7 @@ Het EUREF Permanent GNSS Network wordt ook wel EPN genoemd \cite{LBibEPN3,LBibEP
 
 \section{Communicatie}
 \label{LCom}
-Er zijn verschillende manieren op GNSS data uit te wisselen. E\'en hiervan is RINEX, deze wordt besproken in sectie \ref{LRin}. Dit data formaat is niet beschikbaar voor real-time data transmissie. Om wel aan real-time transmissie te kunnen doen moeten er drie componenten aanwezig zijn. Transmissie protocol dat instaat voor de levering van de data over en netwerk en dat eveneens cotrole mechanismen voorziet. Data formaat is een overneekomst om de uitgezonden bit sequentie te kunnen vertalen naar zinvolle informatie. Als laatste date communicatie link dat instaat voor de manier waarop data van de ene naar de andere partij getransporteerd wordt \cite{LBibRTCM}.
+Er zijn verschillende manieren op GNSS data uit te wisselen. E\'en hiervan is RINEX, deze wordt besproken in sectie \ref{LRin}. Dit data formaat is niet beschikbaar voor real-time data transmissie. Om wel aan real-time transmissie te kunnen doen moeten er drie componenten aanwezig zijn. Transmissie protocol dat instaat voor de levering van de data over en netwerk en dat eveneens cotrole mechanismen voorziet. Data formaat is een overneekomst om de uitgezonden bit sequentie te kunnen vertalen naar zinvolle informatie. Als laatste date communicatie link dat instaat voor de manier waarop data van de ene naar de andere partij getransporteerd wordt. Er zijn twee standaard protocols om GNSS data over het internet te verdelen. Het eerste is RTCM, dit wordt verder besproken in sectie\ref{LRTC}. De tweede mogelijkheid in Rial-Time IGS (RTIGS) \cite{LBibRTCM}, dit wordt verder niet besproken in deze literatuurstudie. Dit omdat het tijdens het verder verloop van de literatuurstudie niet behandeld wordt.
 
 
 \subsection{RINEX data formaat}
@@ -146,13 +152,27 @@ Er zijn verschillende manieren op GNSS data uit te wisselen. E\'en hiervan is RI
 RINEX is een afkorting voor Reciever INdependant Exchange. Het is reeds in gebruik sinds het begin van GPS toepassingen. Het wisselt GPS data uit in een ASCII bestands formaat voor wetenschappelijke en geodatrische toepassingen. RINEX is een internationale standaard. Typisch worden uurlijkse of dagelijks data gearchiveer in RINX vestands formaat en wordt de data beschikbaar door een FTP server om te downloaden. Er zijn verschillende toepassingen die een post-processing methode gebruiken. RINEX is strikt bestand gebaseerd en is niet beschikbaar voor real-time data transmissie \cite{LBibRTCM}. 
 
 \subsection{RTCM}
-RTCM staat voor Radio Technical Commission for Maritime Services \cite{LBibGLONASS}. Dit is standaard formaat gebruikt voor RTK en DPGS correctie data. Het is momenteel het formaat dat het meest gebruikt wordt \cite{LBibRTK3}.
+\label{LRTC}
+RTCM staat voor Radio Technical Commission for Maritime Services \cite{LBibGLONASS}.De sterka vraag voor real-time DPGS heeft geleid tot de oprichting van het Special Comite 104 (afgekort tot SC104) \cite{LBibRTCM}. RTCM is het standaard formaat gebruikt voor RTK en DPGS correctie data. Het is momenteel het formaat dat het meest gebruikt wordt \cite{LBibRTK3}.
 Momenteel zijn drie internationale standaarden voor RTCM \cite{LBibRTCM}:
 \begin{itemize}
 	\item RTCM SC 104
 	\item RTCM SC104 2.3 (RTCM2.3)
 	\item RTCM SC104 3.0 (RTCM3.0) 
 \end{itemize}
+RTCM 2.x heeft een onvoldoende data structuur, hierdoor wordt er een relatief hoge bandbreedte vereist, hierdoor was het niet volledig geschikt voor RTK operaties. Bij RTCM versie 2 was het formaat gebaseerd op de structuur van het GPS Navigatie beicht. Het GPS Naviagtie bericht wordt uitgezonden door een satelliet met een snelheid van 50Hz en \'e\'en woord bestaande uit 30 bits. RTCM versie 2 berichten bestaan uit twee of meer 30 bit woorden.De eerste twee woorden van elk bericht bevatten hoofding informatie zoals preamble, bericht type, station ID en dergelijke. Van de 30 bits kunnen 24 bits data dragen en 6 zijn gealloceerd voor parity check.De lengte van de berichten is gedefinieerd in de RTCM version 2 documenten. Er is een update gebeurd naar versie 3.0. Deze versie is ontwikkeld om RTK operaties te verbeteren en netwerk RTK te ondersteunen. Alle RTCM 3.0 berichten beginnen met een 8-bit vaste sequentie. Deze wordt gevolgd door 6 gereserveerde bits. Elke bericht lengte is variabe en is afhankelijk van het type bericht. Een overzicht van de structuur van een RTCM versie 3 bericht is terug te vinden in tabel \ref{TabRTCM}.
+
+\begin{table}[hbp]
+	\caption{RTCM versie 3 frame structuur}		
+	\begin{tabular}{|c|c|c|c|c|}	
+		\hline
+		Preamble & Gereserveerd & Bericht lengte & Variabele lengte data bericht & CRC \\ \hline
+		8 bits & 6 bits & 10 bits & Variabele lengte, geheel aantal bytes & 24 bits \\ \hline
+	\end{tabular}
+	\label{TabRTCM}
+\end{table}
+
+RTCM versie 3.0 is momenteel het meest populaire formaat. Maar RTCM versie 2 wordt nog steeds op veel plaatsen gebruikt, ondanks de vele voordelen van versie 3.0 \cite{LBibRTCM}.
 
 \subsection{NTRIP}
 \label{LNTR}
